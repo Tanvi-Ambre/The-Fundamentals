@@ -1,0 +1,15 @@
+var message:string = "Welcome to your life";
+var messageCount:number = 555; 
+
+var countOrMessage:(string | number | boolean); // union type
+    countOrMessage = "";
+
+// var heroes = ["asdf", 555, false];
+// var heroes:Array<string> = [555,666];
+
+var user:any = false;
+
+document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("h1")[0].innerHTML = message;
+})
+//alert("Welcome to your life");

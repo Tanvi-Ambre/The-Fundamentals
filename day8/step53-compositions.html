@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* STEP 1
+        let composition = function(){
+           return "hello from composition";
+        }
+
+        console.log(composition()); 
+        */
+
+        /* STEP 2
+        let composition = function(){
+           return function(){
+               return "hello from composition"
+           };
+        }
+        let comp = composition();
+
+        console.log( comp() ); 
+        */
+
+        /* STEP 3
+        let composition = function(fun1, fun2){
+            return function(num){
+                return fun1( fun2( num ) )
+            };
+        }
+        function firstfunction( num ){
+            return num * num;
+        }
+        function secondfunction( num ){
+            return num + num;
+        }
+        
+        let comp = composition(firstfunction, secondfunction);
+        
+        console.log( comp(5) );
+        */
+
+        // DECORATORS / ANNOTATIONS / HIGHER ORDER FUNCTION / COMPOSITION
+        let commonman = {
+            firstname : "Bruce",
+            lastname : "Wayne"
+        };
+
+        function addPower(pow, title){
+            return function(person){
+                return {
+                    firstname : person.firstname,
+                    lastname : person.lastname,
+                    title : title,
+                    power : pow
+                }
+            }
+        };
+
+        let heroReady = addPower(5,'batman');
+            console.log(heroReady(commonman));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

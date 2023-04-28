@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let keepPromise = true;
+        let asyncCall1 = function(){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(keepPromise){
+                        resolve("First Promise Was Resolved");
+                    }else{
+                        reject("First Promise Was Rejected");
+                    }
+                },2000)
+            });
+        };
+        let asyncCall2 = function(){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(false){
+                        resolve("Second Promise Was Resolved");
+                    }else{
+                        reject("Second Promise Was Rejected");
+                    }
+                },1000)
+            });
+        };
+
+       /*  
+        asyncCall1().then(function(res){
+            console.log(res);
+        });
+        asyncCall2().then(function(res){
+            console.log(res);
+        }); 
+        */
+
+       // ALL : all promises must resolve
+
+      /*  
+        Promise.all([asyncCall1(), asyncCall2()])
+       .then(function(res){ 
+           console.log(res) ;
+        })
+       .catch(function(error){ 
+           console.log(error) ;
+        }); 
+       */
+
+       // ANY : will use resolve of any promise that comes first
+       /*
+       Promise.any([asyncCall1(), asyncCall2()])
+       .then(function(res){ 
+           console.log(res) ;
+        })
+        .catch(function(error){ 
+            console.log(error) ;
+        }); 
+        */
+
+       // RACE : will use resolve or reject of any promise that comes first
+       /*
+       */
+       Promise.race([asyncCall1(), asyncCall2()])
+       .then(function(res){ 
+           console.log(res) ;
+        })
+        .catch(function(error){ 
+            console.log(error) ;
+        }); 
+    </script>
+</head>
+<body>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+           /*  
+            for(let i = 0 ; i < 100000; i++){
+                console.log(i);
+            } 
+            */
+           let keepPromise = false;
+           let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(keepPromise){
+                        resolve("Promise was resolved");
+                    }else{
+                        reject("Promise was rejected");
+                    }
+                },2000);
+           });
+            
+/*            promise.then(
+               function(data){ console.log(data) }, 
+               function(error){ console.log(error) }
+               ); */
+           promise
+           .then( function(data){ 
+               document.querySelector("li:first-child").textContent = data;
+               return data.toUpperCase();
+            })
+            .then(function(data){
+               document.querySelector("li:nth-child(3)").textContent = data;
+               return data.toLowerCase();
+            })
+            .then(function(data){
+               console.log(data);
+               document.querySelector("li:nth-child(5)").textContent = data;
+            },function(error){
+                console.log(error) 
+            })
+           // .catch(function(error){ console.log(error) });
+
+            });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+</body>
+</html>

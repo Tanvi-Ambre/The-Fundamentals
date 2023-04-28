@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import { Hero } from "./classes/Hero.js"
+
+        let hero = new Hero('Clark','Kenyt',"Metropolis");
+        hero.mission = "Save the world";
+        console.log( 
+            hero.firstname, 
+            hero.lastname, 
+            hero.fullname(),
+            hero.mission,
+            Hero.canTalk,
+            Hero.canFly(),
+            hero.city,
+            hero.canWalk
+            );
+
+    </script>
+</head>
+<body>
+    <h1>Hello from Using Modules</h1>
+</body>
+</html>

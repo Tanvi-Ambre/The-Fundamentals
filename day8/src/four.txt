@@ -1,0 +1,17 @@
+var message:string = "";
+
+let changeMessage = function():void{
+    message = "Hello There";
+}
+
+console.log(changeMessage());// undefined
+
+let adder = function(num1:number = 0, num2:number = 0, num3?:number):string{
+    let optional:number = num3 || 0;
+    return "Total is "+(num1+num2+optional);
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("h1")[0].innerHTML = adder(5,6);
+})
+//alert("Welcome to your life");

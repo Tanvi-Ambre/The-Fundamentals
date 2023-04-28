@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*        
+        function Hero(fn, ln){
+            var firstname = fn;
+            var lastname = ln;
+            this.fullname = firstname+" "+lastname;
+        };
+
+        let hero1 = new Hero("Bruce", "Wayne");
+        let hero2 = new Hero("Bruce", "Wayne");
+        let hero3 = new Hero("Bruce", "Wayne");
+        console.log(hero.fullname);
+        console.log(hero.firstname); 
+*/
+        class Person{
+            city = "Gotham";
+            constructor(ncity){
+                this.city = ncity;
+            }
+        };
+
+        class Hero extends Person{
+            firstname = "";
+            lastname = "";
+            _mission = "some mission";
+
+            static canTalk = true;
+
+            constructor(fn, ln, cty){
+                super(cty);
+                this.firstname = fn;
+                this.lastname = ln;
+            }
+
+            static canFly(){
+                return "Flying";
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            get mission(){
+                return this._mission;
+            }
+            set mission(nmission){
+                this._mission = nmission;
+            }
+        };
+        let hero = new Hero('Clark','Kenyt',"Metropolis");
+        hero.mission = "Save the world";
+        console.log( 
+            hero.firstname, 
+            hero.lastname, 
+            hero.fullname(),
+            hero.mission,
+            Hero.canTalk,
+            Hero.canFly(),
+            hero.city
+            );
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
