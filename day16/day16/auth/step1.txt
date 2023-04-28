@@ -1,0 +1,79 @@
+const express = require("express");
+const bodyparser = require("body-parser");
+const mongoose = require("mongoose");
+//------------------------------------------------
+let app = express();
+// app.use(bodyparser.urlencoded({ extended : true }));
+app.use(bodyparser.urlencoded());
+app.locals.pretty = true;
+//------------------------------------------------
+let Schema = mongoose.Schema;
+let ObjectId = Schema.ObjectId;
+let User = mongoose.model("User", new Schema({
+    id : ObjectId,
+    firstName : String,
+    lastName : String,
+    email : { type : String, unique : true },
+    password : String,
+}))
+//------------------------------------------------
+mongoose.connect("mongodb://localhost/ibmusers", { useNewUrlParser: true, useUnifiedTopology: true });
+//------------------------------------------------
+app.get("/", function(req, res){
+    res.render("index.pug");
+})
+app.get("/register", function(req, res){
+    res.render("register.pug");
+})
+app.post("/register", function(req, res){
+    let user = new User({
+        firstName : req.body.firstName,
+        lastName : req.body.lastName,
+        email : req.body.email,
+        password : req.body.password
+    });
+    user.save((error) => {
+        let err = '';
+        if(error){
+            if(error.code === 11000){
+                err = "email is already in use";
+            }else{
+                err = "some thing went wrong pleas try again";
+            }
+            res.render("register.pug", {
+                error : err
+            })
+        }else{
+            res.redirect("/profile");
+        }
+    })
+})
+app.get("/login", function(req, res){
+    res.render("login.pug");
+})
+app.post("/login", function(req, res){
+    User.findOne({ email : req.body.email }, ( error, user ) => {
+        if( !user ){
+            res.render("login.pug", {
+                error : " no user by that credentials " 
+            })
+        }else{
+            if(req.body.password === user.password){
+                res.redirect("/profile");
+            }else{
+                res.render("login.pug", {
+                    error : " Invalid email or password " 
+                })
+            }
+        }
+    })
+})
+app.get("/profile", function(req, res){
+    res.render("profile.pug");
+})
+app.get("/logout", function(req, res){
+    res.redirect("/");
+})
+//------------------------------------------------
+app.listen(5000);
+console.log("server is now live on localhost : 5000");

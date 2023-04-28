@@ -1,0 +1,25 @@
+// Action Type
+const ADD_HERO = "ADD_HERO";
+
+// Action Dispatcher
+function addHero(){
+    return {
+        type : ADD_HERO,
+        info : "This is my First Redux Action"
+    }
+};
+
+// default / initial state of the application
+const initialState = {
+    heroes : 0
+};
+
+let reducer = function( state = initialState, action ){
+    switch(action.type){
+        case ADD_HERO : return {
+            ...state,
+            heroes : state.heroes + 1
+        }
+        default : return state
+    }
+}

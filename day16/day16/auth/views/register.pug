@@ -1,0 +1,22 @@
+extends template 
+block vars 
+    - var title = "IBM Registeration Page"
+block body 
+    h1 Create your Account to Access the Application
+    if error 
+        p Error : #{error}
+
+    form(method = "post")
+        label(for="userfname") First Name : 
+            input(type="text" id="userfname" name="firstName" required)
+        br
+        label(for="userlname") Last Name : 
+             input(type="text" id="userlname" name="lastName" required)
+        br
+        label(for="usermail") eMail : 
+            input(type="email" id="usermail" name="email" required)
+        br
+        label(for="userpass") Password : 
+            input(type="password" id="userpass" name="password" required)
+        br
+        button(type="submit") Create Account 
