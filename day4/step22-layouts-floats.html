@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 1000px;
+            background-color: dimgrey;
+            height: 500px;
+            border:  1px solid transparent;
+        }
+        [class ^= 'nestedBox']{
+            width: 200px;
+            background-color: goldenrod;
+            margin: 10px;
+            float: left;
+        }
+        [class ^= 'nestedBox'] span{
+            font-size: 32px;
+        }
+        .box p{
+            clear: both;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nestedBox1">
+            <span>1</span>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque itaque maiores autem suscipit aliquam velit fugit nostrum corporis perferendis esse! Odit quis sunt necessitatibus quae, earum eius. Officiis, iste vero.
+        </div>
+        <div class="nestedBox2">
+            <span>2</span>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque itaque maiores autem suscipit aliquam velit fugit nostrum corporis perferendis esse! Odit quis sunt necessitatibus quae, earum eius. Officiis, iste vero.
+        </div>
+        <div class="nestedBox3">
+            <span>3</span>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque itaque maiores autem suscipit aliquam velit fugit nostrum corporis perferendis esse! Odit quis sunt necessitatibus quae, earum eius. Officiis, iste vero.
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, reiciendis quam officiis aperiam ad rem molestiae eum nulla, odit inventore, exercitationem tenetur praesentium cum quia odio blanditiis quidem dolor porro?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat minus, sequi saepe exercitationem repellendus sunt corporis! Vel vitae neque dolor, consequuntur tempora ad suscipit ab omnis voluptatum distinctio consequatur quibusdam?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat minus, sequi saepe exercitationem repellendus sunt corporis! Vel vitae neque dolor, consequuntur tempora ad suscipit ab omnis voluptatum distinctio consequatur quibusdam?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat minus, sequi saepe exercitationem repellendus sunt corporis! Vel vitae neque dolor, consequuntur tempora ad suscipit ab omnis voluptatum distinctio consequatur quibusdam?
+        </p>
+    </div>
+</body>
+</html>

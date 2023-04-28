@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            let btns = document.getElementsByTagName("button");
+            for(let i = 0; i < btns.length; i++){
+                btns[i].addEventListener("mouseover", clickHandler);
+                btns[i].addEventListener("mousedown", clickHandler);
+                btns[i].addEventListener("mouseup", clickHandler);
+                btns[i].addEventListener("click", clickHandler);
+                btns[i].addEventListener("mouseout", clickHandler);
+            };
+        });
+        function clickHandler(evt){
+           console.log(evt.type)
+        }
+    </script>
+    <style>
+        button{
+            display: block;
+            padding: 10px;
+            margin: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" data-clickable="1" title="button 1">Click Me 1</button>
+</body>
+</html>

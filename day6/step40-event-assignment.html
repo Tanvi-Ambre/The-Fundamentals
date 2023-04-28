@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            let btns = document.getElementsByTagName("button");
+            for(let i = 0; i < btns.length; i++){
+                btns[i].addEventListener("click", clickHandler);
+            };
+        });
+
+        function clickHandler(evt){
+            let count = Number( event.target.getAttribute("data-clickable") );
+            event.target.innerText = "times clicked "+count;
+            event.target.setAttribute("data-clickable", count+=1);
+            console.log(event.target.getAttribute("data-clickable"));
+            if(event.target.getAttribute("data-clickable") > 5){
+                event.target.removeEventListener("click", clickHandler);
+            }
+        }
+    </script>
+    <style>
+        button{
+            display: block;
+            padding: 10px;
+            margin: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" data-clickable="1" title="button 1">Click Me 1</button>
+    <button class="btn" data-clickable="1" title="button 2">Click Me 2</button>
+    <button class="btn" data-clickable="1" title="button 3">Click Me 3</button>
+    <button class="btn" data-clickable="1" title="button 4">Click Me 4</button>
+    <button class="btn" data-clickable="1" title="button 5">Click Me 5</button>
+</body>
+</html>

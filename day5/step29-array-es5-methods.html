@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var heroes = ["Batman", "Superman", "Wonder Women", "Aquaman", "Green Lantern", "Flash", "Cyborg"];
+            // for(var i = 0; i < heroes.length; i++){
+            //     console.log(heroes[i]);
+            // };
+
+            // forEach
+            /*
+            heroes.forEach(function(val, idx, arr){
+                // console.log(arguments[0],arguments[1],arguments[2]);
+                console.log(idx, val);
+            });
+            */
+        // var heroesInCaps = [];
+        //  for(var i = 0; i < heroes.length; i++){
+        //         heroesInCaps.push(heroes[i].toUpperCase());
+        //     };
+        // console.log(heroesInCaps);
+
+        // MAP
+        /*
+        var heroesInCaps = heroes.map(function(val, idx, arr){
+            return val.toUpperCase();
+        });
+        console.log(heroesInCaps);
+        */
+
+        // FILTER
+        /*
+        var score = [12,9,3,21,11,7,89,93,104,2,81,-5];
+        var greaterThan10 = score.filter(function(val, idx, arr){
+            // console.log(val, idx, arr)
+            return val > 10;
+        });
+        console.log(greaterThan10);
+        */
+        var score = [12,9,3,21,11,7,89,93,104,2,81,21];
+        // EVERY
+        // var allGreaterThan10 = score.every(function(v,i,a){
+        //     return v > 10;
+        // });
+        // console.log(allGreaterThan10);// 
+        /*
+        var someGreaterThan10 = score.some(function(v,i,a){
+            console.log(v);
+            return v > 10;
+        });
+        console.log(someGreaterThan10);// 
+        */
+       // REDUCE
+       /*
+       var total = score.reduce(function(initVal, val, idx, arr){
+           console.log(val)
+           return initVal + val;
+        }, 0);
+        
+        console.log(total);
+        */
+       var locationOf21 = score.lastIndexOf(21);
+       console.log(locationOf21);
+       console.log("\"hello world\"");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

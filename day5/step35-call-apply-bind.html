@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let ironman = {
+            title : "Ironman",
+            firstname : "Tony",
+            lastname : "Stark",
+            fullname : function(greeting, city){
+                return greeting+" | "+this.firstname+" "+this.lastname+" | "+city;
+            }
+        };
+        let spiderman = {
+            title : "Spiderman",
+            firstname : "Peter",
+            lastname : "Parker"
+        };
+        let captainAmerica = {
+            title : "Captain America",
+            firstname : "Steve",
+            lastname : "Rogers"
+        };
+        let hulk = {
+            title : "Hulk",
+            firstname : "Bruce",
+            lastname : "Benner"
+        };
+        var hulkfullname = ironman.fullname.bind(hulk);
+
+        console.log(ironman.fullname('Hi', "California"));
+        console.log(ironman.fullname.call(spiderman, "Hello", "New York"));
+        console.log(ironman.fullname.apply(captainAmerica, ["Hey", "New York"]));
+        console.log(hulkfullname("Ola","Dayton"));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

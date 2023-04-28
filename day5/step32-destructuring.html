@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let hero = {
+            title : "Batman",
+            power : 7,
+            city : "Gotham"
+        };
+
+        // var tempHero = hero;
+        //     tempHero.title = "Joker";
+        //     console.log(tempHero.title);// Joker 
+        //     console.log(hero.title);//  Batman
+
+/*         
+        var tempHeroTitle = hero.title;
+        var tempHeroPower = hero.power;
+        var tempHeroCity = hero.city; 
+*/
+
+        // var tempHeroTitle = hero.title, 
+        //     tempHeroPower = hero.power, 
+        //     tempHeroCity = hero.city;
+
+        // DESTRUCTURING
+
+        let { title, power, city } = hero;
+
+        console.log(title);// Batman
+        title = "Joker";
+        console.log(title);// Joker
+        console.log(hero.title);// Batman
+        // window.onload = function(){
+        //     document.getElementById("ht").innerText = tempHero.title;
+        //     document.getElementById("hp").innerText = tempHero.power;
+        //     document.getElementById("hc").innerText = tempHero.city;
+        // }
+        let arr = ["chacha choudary", "shaktiman", "krish"];
+        let [firsthero, secondhero, thirdhero] = arr;
+        console.log(firsthero);
+    </script>
+</head>
+<body>
+    <ul>
+        <li> Title : <span id="ht"></span> </li>
+        <li> Power : <span id="hp"></span> </li>
+        <li> City : <span id="hc"></span></li>
+    </ul>
+</body>
+</html>

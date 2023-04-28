@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Function Declaration
+       /*  function adder( num1, num2 ){
+            return num1 + num2
+        }; */
+        // Function Expression
+       /*  let adder = function( num1, num2 ){
+            return num1 + num2
+        }; 
+        console.log(adder(3,4)); // 7 */
+        // console.log(adder);
+
+        // Function as method
+        /* 
+        let hero = {
+            fname : "Bruce",
+            lname : "Wayne",
+            fullname : function(){
+                return this.fname+" "+this.lname;
+            }
+        };
+        console.log(hero.fullname()); 
+        */
+       // Function as Class
+       // Function as Constructor
+        /* 
+        function Hero(fn, ln){
+            this.fname = fn,
+            this.lname = ln,
+            this.fullname = function(){
+                return this.fname+" "+this.lname;
+            }
+        };
+        let hero = new Hero("tony", "stark");
+        console.log(hero.fname);// tony
+        console.log(hero.fullname());// tony stark 
+        */
+    //   let app = (function(){
+
+    //   })();
+
+    /*    
+    var app = (function(msg){
+            var mission = msg;
+            this.title = "Captain America";
+            console.log(mission);
+            return this.title
+        });
+        // console.log(mission);// 
+        console.log( app("top secret") ); 
+    */
+   // 
+   /* function adder( num1, num2 ){
+       let n1 = num1 || 0;
+       let n2 = num2 || 0;
+       return n1 + n2
+    }; 
+    */
+    // Default Parameters 
+    /* 
+    function adder( num1 = 0, num2 = 0 ){
+        return num1 + num2
+    };
+    console.log(adder(null,2));// NaN 
+    */
+
+/*     function adder(){
+        var total = 0;
+         for(let i = 0; i < arguments.length; i++){
+             total += arguments[i]
+         }
+        return total;
+    }; */
+
+// REST PARAMETER
+    function adder(...nums){
+/*      var total = 0;
+         for(let i = 0; i < nums.length; i++){
+             total += nums[i]
+         }
+        return total; 
+*/
+/*      
+        var total = 0;
+        nums.forEach(function(v){
+            total += v;
+        });
+        return total; 
+*/
+        var total = nums.reduce(function(init, v){
+            return init + v;
+        },0);
+        return total;
+    };
+    let args = [2,3,4,5,6,7,8,9];
+    // SPREAD OPERATOR
+    // console.log(adder(args[0], args[1],args[2],args[3]));//  
+    console.log(adder(...args));//  
+    </script>   
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-left: 40px;
+            width: 1000px;
+            border: 1px solid black;
+        }
+        .box{
+            background-color: cadetblue;
+            width: 880px;
+            height: 1000px;
+            border: 1px solid transparent;
+            overflow: auto;
+            margin: 20px;
+            position: relative;
+        }
+        [class ^='nestedBox']{
+            border: 2px solid red;
+            width: 200px;
+            text-align: justify;
+            background-color: blueviolet;
+            padding: 10px;
+            position: absolute;
+            top: 0px;
+        }
+        .nestedBox1{
+            left: 0px;
+        }
+        .nestedBox2{
+            left: 220px;
+        }
+        .nestedBox3{
+            left: 440px;
+        }
+        .nestedBox4{
+            left: 660px;
+        }
+
+    </style>
+</head>
+<body>Body
+    <div class="box">
+        <div class="nestedBox1">
+            1
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque itaque maiores autem suscipit aliquam velit fugit nostrum corporis perferendis esse! Odit quis sunt necessitatibus quae, earum eius. Officiis, iste vero.
+        </div>
+        <div class="nestedBox2">
+            2
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque itaque maiores autem suscipit aliquam velit fugit nostrum corporis perferendis esse! Odit quis sunt necessitatibus quae, earum eius. Officiis, iste vero.
+        </div>
+        <div class="nestedBox3">
+            3
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque itaque maiores autem suscipit aliquam velit fugit nostrum corporis perferendis esse! Odit quis sunt necessitatibus quae, earum eius. Officiis, iste vero.
+        </div>
+        <div class="nestedBox4">
+            4
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque itaque maiores autem suscipit aliquam velit fugit nostrum corporis perferendis esse! Odit quis sunt necessitatibus quae, earum eius. Officiis, iste vero.
+        </div>
+</div>
+</body>
+</html>

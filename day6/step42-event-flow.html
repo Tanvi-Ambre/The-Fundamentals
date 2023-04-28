@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outerbox{
+            width: 600px;
+            height: 400px;
+            background-color: dimgray;
+            margin: 50px auto;
+            border: 1px solid transparent;
+        }
+        .innerbox{
+            width: 400px;
+            height: 200px;
+            background-color: rgb(196, 196, 196);
+            margin: 100px auto;
+            border: 1px solid transparent;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            margin: 75px auto;
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByClassName("outerbox")[0].addEventListener("click", outerBoxClickHandler, true);
+            document.getElementsByClassName("innerbox")[0].addEventListener("click", innerBoxClickHandler, true);
+            document.getElementsByTagName("button")[0].addEventListener("click", buttonClickHandler);
+            document.getElementsByClassName("outerbox")[0].addEventListener("click", outerBoxClickHandler);
+            document.getElementsByClassName("innerbox")[0].addEventListener("click", innerBoxClickHandler);
+            //----------------------------
+            document.getElementsByTagName("a")[0].addEventListener("click", anchorHandler);
+        });
+        function outerBoxClickHandler(evt){
+            evt.stopPropagation();
+            console.log("you clicked "+evt.target.className, evt.eventPhase, evt.currentTarget.className)
+        }
+        function innerBoxClickHandler(evt){
+            console.log("you clicked "+evt.target.className, evt.eventPhase, evt.currentTarget.className)
+        }
+        function buttonClickHandler(evt){
+            console.log("you clicked "+evt.target.className, evt.eventPhase, evt.currentTarget.className)
+        }
+        function anchorHandler(evt){
+            evt.preventDefault();
+        }
+    </script>
+</head>
+<body>
+    <div class="outerbox">
+        <div class="innerbox">
+            <button class="button">Click Me</button>
+        </div>
+    </div>
+    <hr>
+    <a href="http://google.com">Lets Google</a>
+</body>
+</html>

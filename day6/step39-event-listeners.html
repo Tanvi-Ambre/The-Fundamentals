@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+/*             document.getElementsByTagName("button")[0].addEventListener("click", function(){
+                console.log("you clicked the 1st button")
+            });
+            document.getElementsByTagName("button")[1].addEventListener("click", function(){
+                console.log("you clicked the 2nd button")
+            });
+            document.getElementsByTagName("button")[2].addEventListener("click", function(){
+                console.log("you clicked the 3rd button")
+            });
+            document.getElementsByTagName("button")[3].addEventListener("click", function(){
+                console.log("you clicked the 4th button")
+            }); */
+            let btns = document.getElementsByTagName("button");
+            for(let i = 0; i < btns.length; i++){
+                btns[i].addEventListener("click", clickHandler);
+            };
+            // document.addEventListener("mousemove", function(){
+            //     console.log("mouse moved")
+            // })
+            // document.addEventListener("click", function(){
+            //     console.log("click happened")
+            // })
+        });
+
+        function clickHandler(evt){
+                     /*
+                    event.target
+                    event.type
+                    // event.currentTarget
+                    */
+                    // console.log(event.target);
+                    // event.target.style = "display : none";
+                   event.target.innerText = "Clicked";
+                   console.log(evt.target.textContent);
+                   event.target.removeEventListener("click", clickHandler);
+        }
+    </script>
+    <style>
+        button{
+            display: block;
+            padding: 10px;
+            margin: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" title="button 1">Button : 1</button>
+    <button class="btn" title="button 2">Button : 2</button>
+    <button class="btn" title="button 3">Button : 3</button>
+    <button class="btn" title="button 4">Button : 4</button>
+</body>
+</html>

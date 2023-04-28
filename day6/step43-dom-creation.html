@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container{
+           background-color: rgb(49, 49, 49);
+           border: 1px solid transparent;
+           display: table;
+       }
+       .container .box{
+           text-align: center;
+           width: 100px;
+           height: 100px;
+           line-height: 100px;
+           margin: 5px;
+           float : left;
+           font-weight: bold;
+           font-size: 18 px;
+       }
+    </style>
+    <script>
+        let count = 1;
+        let container;
+        document.addEventListener("DOMContentLoaded", function(){
+         container = document.getElementsByClassName("container")[0];
+         container.addEventListener("click", boxClickHandler)
+         document.getElementsByTagName("button")[0].addEventListener("click", addBox)
+         document.getElementsByTagName("button")[1].addEventListener("click", removeFirstBox)
+         document.getElementsByTagName("button")[2].addEventListener("click", removeLastBox)
+        });
+        function addBox(){
+            count++;
+            let r = Math.round(Math.random() * 255);
+            let g = Math.round(Math.random() * 255);
+            let b = Math.round(Math.random() * 255);
+            // let box = document.createElement("div");
+            //     box.innerText = "I am Box "+count;
+            //     box.setAttribute("class", "box");
+            //     box.style="background-color: rgb("+r+", "+g+", "+b+")";
+            //     box.addEventListener("click", boxClickHandler);
+            //     // box.className = "box";
+            //     container.appendChild(box);
+
+            //    container.innerHTML += "<div onclick='boxClickHandler(this)' style='background-color: rgb("+r+", "+g+", "+b+")' class='box'>I am Box "+count+"</div>";
+            container.innerHTML += `
+                            <div style="background-color: rgb(${r}, ${g}, ${b})" class="box">
+                                I am Box ${count}
+                            </div>
+                            `;
+            }
+            function removeFirstBox(){
+                let box =  container.firstChild;
+                if(box){
+                    container.removeChild(box);
+                    count--;
+                }else{
+                    alert("nothing to remove")
+                }
+            }
+            function removeLastBox(){
+                let box =  container.lastChild;
+                if(box){
+                    container.removeChild(box);
+                    count--;
+                }else{
+                    alert("nothing to remove")
+                }
+            }
+            function boxClickHandler(evt){
+                if(evt.target.className === "box"){
+                    container.removeChild(evt.target)
+                    count--;
+                }else{
+                    alert("click on the box to remove")
+                }
+            }
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Remove First Box</button>
+    <button>Remove Last Box</button>
+    <hr>
+    <div class="container"></div>
+</body>
+</html>

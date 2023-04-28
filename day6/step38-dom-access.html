@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload = init;
+        // window.addEventListener("load", init);
+        /* document.addEventListener("DOMContentLoaded", init);
+        function init(){
+            document.getElementsByTagName("div")[0].innerText = "Hello World";
+        }; */
+
+        function fun1(){
+            console.log("Fun1 body onload Was Called")
+        }
+
+        window.addEventListener("load", fun2);
+
+        function fun2(){
+            console.log("Fun2 window.addEventListener load Called")
+        }
+
+        document.addEventListener("DOMContentLoaded", fun3);
+        
+        function fun3(){
+            console.log("Fun3 document.addEventListener DOMContentLoaded Called");
+           // document.getElementsByTagName("div")[0].innerText = "Hello World";
+           // console.log(document.body.children[0].tagName);
+           // console.log(document.body.children[0].firstChild.nodeValue);
+           // the following code works if there is a node in the selected tag
+             document.body.children[0].firstChild.nodeValue = "Good Morning";
+        }
+    </script>
+</head>
+<!--body onload="init()"-->
+<body onload="fun1()">
+    <div> </div>
+</body>
+</html>

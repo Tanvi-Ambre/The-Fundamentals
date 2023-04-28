@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var user = "vijay";
+        // console.log(this.user, window.user);
+        /*
+        var hero = {
+            title : "Batman",
+            whoisit : function(){
+                console.log(this);
+            }
+        }
+        
+        hero.whoisit();
+        */
+       var hero = {
+           title : "Batman",
+           power : 6
+       };
+       function checkPower(){
+           if(hero.power > 5){
+               let data = hero.title+" is strong";
+               hero.title = data;
+               console.log(data);//
+            }
+       };
+
+       checkPower();
+
+       console.log(hero.title);// 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

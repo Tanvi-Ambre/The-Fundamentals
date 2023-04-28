@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*         
+        let obj1 = {};
+        let obj2 = new Object();
+        let obj3 = Object.create(null);
+        console.log(typeof obj1, typeof obj2, typeof obj3); 
+*/
+        let person = Object.create(null);
+            Object.defineProperty(person, "city", 
+            { value : "Bengaluru", enumerable : true });
+            // console.log(person.city);
+            person.city = "Mumbai";
+            console.log(person.city);// 
+
+        let hero = Object.create(person);
+            console.log(hero.city);
+            Object.defineProperty(hero, "title", 
+            {   
+                value : "Ironman", 
+                writable : true,
+                enumerable : true,
+                configurable : true
+             });
+             Object.defineProperty(hero,"titleAccess", {
+                 get : function(){
+                    return this.title;
+                 },
+                 set : function(ntitle){
+                    this.title = ntitle;
+                 }
+             });
+            console.log(hero.title);
+            hero.title = "Joker";
+            console.log(hero.title);
+
+            for(let prop in hero){
+                console.log(prop, hero[prop]);
+            };
+
+/*          Object.defineProperty(hero, "title", 
+            {   
+                writable : false,
+                enumerable : false
+             }); 
+*/
+
+            hero.title = "Iron Monger";
+            
+            for(let prop in hero){
+                console.log(prop, hero[prop]);
+            };
+      /*   let ironman = {
+            title : "Ironman",
+            fname : "Tony",
+            lname : "Stark",
+            city : "New York"
+        };
+        for(let prop in ironman){
+            console.log(prop, ironman[prop]);
+        }; */
+        console.log(hero.titleAccess);//
+        hero.titleAccess = "Superman"; 
+        console.log(hero.titleAccess);//
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
