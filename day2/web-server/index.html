@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workers Page</title>
+    <script>
+        var webWorker;
+        function init(){
+            document.getElementById("btnChange").addEventListener("click", changeNum);
+            document.getElementById("btnStart").addEventListener("click", startWorker);
+            document.getElementById("btnStop").setAttribute("disabled", "disabled");
+        };
+        function startWorker(){
+            webWorker = new Worker("worker2.js");
+            webWorker.addEventListener("message", messageHandler);
+            //--------------------------------------------------------------------
+            document.getElementById("btnStart").setAttribute("disabled", "disabled");
+            document.getElementById("btnStart").removeEventListener("click", startWorker);
+            //--------------------------------------------------------------------
+            document.getElementById("btnStop").addEventListener("click", stopWorker);
+            document.getElementById("btnStop").removeAttribute("disabled");
+        };
+        function messageHandler(event){
+            document.getElementById("ran").textContent = event.data;
+        };
+        function stopWorker(){
+            webWorker.terminate();
+            document.getElementById("btnStart").removeAttribute("disabled");
+            document.getElementById("btnStart").addEventListener("click", startWorker);
+            //--------------------------------------------------------------------
+            document.getElementById("btnStop").setAttribute("disabled", "disabled");
+            document.getElementById("btnStop").removeEventListener("click", stopWorker);
+        };
+        function changeNum(){
+            var value = document.getElementById("ip").value;
+            webWorker.postMessage(value);
+            document.getElementById("log").textContent = value;
+        };
+    </script>
+</head>
+<body onload="init()">
+   <input id="ip" type="number" step="50" min="0" max="100000">
+   <button id="btnChange">Change number</button>
+   <h1>Count now is : <output id="log">100</output></h1>
+   <hr>
+   <button id="btnStart">Start Worker</button>
+   <button id="btnStop">Stop Worker</button>
+   <h1>Random number now is : <output id="ran"></output></h1>
+</body>
+</html>

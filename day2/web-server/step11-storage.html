@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+    <script>
+        var count = localStorage.length;
+        function init(){
+            document.getElementById("storebtn").addEventListener("click", function(){
+                // var hero = {};
+                // hero.username = document.getElementById("username").value;
+                // hero.userage = document.getElementById("userage").value;
+                // hero.useremail = document.getElementById("usermail").value;
+                // console.log(hero);
+                var hero = {
+                    username : document.getElementById("username").value,
+                    userage : document.getElementById("userage").value,
+                    useremail : document.getElementById("usermail").value
+                };
+                localStorage.setItem("hero"+count, JSON.stringify(hero));
+                document.getElementById("username").value = '';
+                document.getElementById("userage").value = '';
+                document.getElementById("usermail").value = '';
+                count++;
+                // localStorage.setItem(user, document.getElementById("username").value);
+                // localStorage.setItem("userage", document.getElementById("userage").value);
+                // localStorage.setItem("useremail", document.getElementById("usermail").value);
+            })
+            document.getElementById("getbtn").addEventListener("click", function(){
+                alert("User Info : \n"+localStorage.getItem("hero"+(count-1)) );
+            })
+            document.getElementById("delbtn").addEventListener("click", function(){
+               localStorage.clear();
+            })
+        }
+    </script>
+</head>
+<body onload="init()">
+    <h1>Hello from Express</h1>
+    <table>
+        <tr>
+            <td>User Name</td>
+            <td>
+                <input id="username" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>User Age</td>
+            <td>
+                <input id="userage" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>User eMail</td>
+            <td>
+                <input id="usermail" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+               <button id="storebtn">Store User Info</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="getbtn">Get Latest User Info</button>
+            </td>
+            <td>
+                <button id="delbtn">Delete User Info</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="GET">
+        <table>
+            <tr>
+                <td>
+                    <label for="un"> User Name :  </label>
+                </td>
+                <td>
+                    <input id="un" required name="username" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ua"> User Age :  </label>
+                </td>
+                <td>
+                    <input id="ua" required name="userage" step="0.1" max="80" min="18" type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="up"> User Phone :  </label>
+                </td>
+                <td>
+                    <input id="up" title="###-####-####" pattern="\d{3}-\d{4}-\d{4}" required name="userphone" type="tel"> 022-1234-1234
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    <button>Register Me</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

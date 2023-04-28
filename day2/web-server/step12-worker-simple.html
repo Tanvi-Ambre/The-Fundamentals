@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workers Page</title>
+    <script>
+    //    function init(){
+    //     var elm = document.getElementById("count");
+    //     for(var i = 0; i < 10000000 ; i++){
+    //         elm.innerText = i;
+    //     };        
+    //    }
+    var webWorker;
+    function messageFun(event){
+            console.log(event);
+            document.getElementById("count").textContent = event.data;
+    }
+    function init(){
+        webWorker = new Worker("worker.js");
+        webWorker.addEventListener("message", messageFun);
+    };
+    </script>
+</head>
+<body onload="init()">
+    <h1>Web Workers API</h1>
+    <h1>The Count is : <span id="count"></span></h1>
+</body>
+</html>

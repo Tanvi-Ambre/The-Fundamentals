@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            var ua = document.getElementById("ua");
+            ua.setCustomValidity("Please fill your age");
+            ua.addEventListener("input", function(){
+                if(ua.value < 18){
+                    ua.setCustomValidity("You are too young to join us");
+                }else if(ua.value > 80){
+                    ua.setCustomValidity("You are too old to join us");
+                }else{
+                    ua.setCustomValidity("");
+                }
+            })
+        }
+    </script>
+</head>
+<body onload="init()">
+    <form action="#" method="GET">
+        <table>
+            <tr>
+                <td>
+                    <label for="ua"> User Age :  </label>
+                </td>
+                <td>
+                    <input id="ua" required name="userage" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    <button>Register Me</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

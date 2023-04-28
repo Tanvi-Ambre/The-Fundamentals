@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            var vid = document.getElementById("vid");
+            document.getElementById("playbtn").addEventListener("click", function(){
+                vid.play();
+            })
+            document.getElementById("pausebtn").addEventListener("click", function(){
+                vid.pause();
+            })
+            document.getElementById("stopbtn").addEventListener("click", function(){
+               vid.currentTime = 0;
+               vid.pause();
+            })
+        }
+    </script>
+</head>
+<body onload="init()">
+    <video id="vid" poster="images/antman.jpg" >
+        <source src="media/html5.mp4">
+        <source src="media/html5.webm">
+    </video>
+    <hr>
+    <button id="playbtn">Play</button>
+    <button id="pausebtn">Pause</button>
+    <button id="stopbtn">Stop</button>
+</body>
+</html>

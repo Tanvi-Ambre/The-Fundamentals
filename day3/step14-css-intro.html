@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: dodgerblue;
+        }
+        p span{
+            color: deeppink;
+        }
+        #box{
+            color: darkblue;
+        }
+        .player{
+            color: darkgoldenrod;
+        }
+        /*
+        a{
+            color: greenyellow;
+        }
+        a:link{
+            color: greenyellow;
+        }
+        */
+        a:link{
+            color: limegreen;
+        }
+        a:visited{
+            color: lightseagreen;
+        }
+        a:hover{
+            color: orange;
+        }
+        #pseudopara:first-letter{
+            font-size: 40px;
+        }
+        #pseudopara:first-line{
+            color: orangered;
+        }
+        ul li span:before{
+            content: ">> ";
+        }
+        ul li span::after{
+            content: " <<";
+        }
+        input:hover{
+            background-color: palegreen;
+        }
+        input:focus{
+            background-color: palevioletred;
+        }
+        input:active{
+            background-color: olive;
+        }
+        p:lang(en){
+            font-family: 'Courier New', Courier, monospace;
+            color: red;
+        }
+        p:lang(fr){
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        p:lang(es){
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        }
+        p:first-child{
+            border: 2px solid orangered;
+        }
+
+        #boxer p:nth-child(2){
+            border-radius: 10px;
+            
+            border: 3px solid blueviolet ;
+        }
+        #herolist+p{
+            border: 5px dotted red;
+        }
+        #herolist~p{
+            border: 5px dotted midnightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Element Selector
+    </h1>
+    <p>
+        <b> I am bold Tag
+            <span>amet consectetur </span>
+        </b>
+        Lorem ipsum dolor <span>amet consectetur </span> sit, adipisicing elit. Eum eius tempora, doloribus ipsa voluptatem ut minima cupiditate ea ipsam ullam porro. Harum rerum ut eum perspiciatis a iusto dolorum blanditiis.
+    </p>
+
+    <p id="box">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum eius tempora, doloribus ipsa voluptatem ut minima cupiditate ea ipsam ullam porro. Harum rerum ut eum perspiciatis a iusto dolorum blanditiis.
+    </p>
+    <p class="player">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum eius tempora, doloribus ipsa voluptatem ut minima cupiditate ea ipsam ullam porro. Harum rerum ut eum perspiciatis a iusto dolorum blanditiis.
+    </p>
+    <span>amet consectetur </span>
+
+    <hr>
+    <h1>
+        Pseudo Class Selector
+    </h1>
+    <a>anchor tag without href</a>
+    <br>
+    <a href="#">anchor tag with href</a>
+    <br>
+    <a href="https://www.nordicwalking.in">anchor tag that is clicked</a>
+    <br>
+    <h1>
+        Pseudo Element Selector
+    </h1>
+    <p id="pseudopara">
+        Vorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat aspernatur laudantium neque mollitia dolorem quibusdam vero, ducimus reiciendis veritatis, odio quisquam impedit doloremque obcaecati cupiditate, non nemo beatae laborum vel.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat aspernatur laudantium neque mollitia dolorem quibusdam vero, ducimus reiciendis veritatis, odio quisquam impedit doloremque obcaecati cupiditate, non nemo beatae laborum vel.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat aspernatur laudantium neque mollitia dolorem quibusdam vero, ducimus reiciendis veritatis, odio quisquam impedit doloremque obcaecati cupiditate, non nemo beatae laborum vel.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat aspernatur laudantium neque mollitia dolorem quibusdam vero, ducimus reiciendis veritatis, odio quisquam impedit doloremque obcaecati cupiditate, non nemo beatae laborum vel.
+    </p>
+    <ul>
+        <li>
+            <span> Batman </span>
+        </li>
+        <li>
+            <span> Superman </span>
+        </li>
+        <li>
+            <span> Aquaman </span>
+        </li>
+        <li>
+            <span> Flash </span>
+        </li>
+    </ul>
+    <h1>
+        Dynamic Pseudo Class Selector
+    </h1>
+    <input type="text">
+    <br>
+    <br>
+    <input type="text">
+    <br>
+    <br>
+    <input type="text">
+    <br>
+    <br>
+    <input type="text">
+    <h1>
+        Lang Pseudo Class Selector
+    </h1>
+    <p lang="en">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam modi doloremque esse voluptatem non, rerum maiores, cum officiis, totam fugiat nam. Sunt maxime magnam quam fuga voluptatibus, odit eveniet.
+    </p>
+    <p lang="fr">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam modi doloremque esse voluptatem non, rerum maiores, cum officiis, totam fugiat nam. Sunt maxime magnam quam fuga voluptatibus, odit eveniet.
+    </p>
+    <p lang="es">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam modi doloremque esse voluptatem non, rerum maiores, cum officiis, totam fugiat nam. Sunt maxime magnam quam fuga voluptatibus, odit eveniet.
+    </p>
+    <h1>
+        Child Selector
+    </h1>
+    <div id="boxer">
+        <p>
+            First Paragraph
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusantium ipsam at eaque alias quisquam debitis doloremque incidunt velit officia itaque obcaecati fuga labore blanditiis reprehenderit deleniti nulla, numquam minima?
+        </p>
+        <p>
+            Second Paragraph
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusantium ipsam at eaque alias quisquam debitis doloremque incidunt velit officia itaque obcaecati fuga labore blanditiis reprehenderit deleniti nulla, numquam minima?
+        </p>
+        <p>
+            Third Paragraph
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusantium ipsam at eaque alias quisquam debitis doloremque incidunt velit officia itaque obcaecati fuga labore blanditiis reprehenderit deleniti nulla, numquam minima?
+        </p>
+    </div>
+    <h1>
+        Adjecent Selector
+    </h1>
+    <ul id="herolist">
+        <li>click me</li>
+        <li>click me</li>
+        <li>click me</li>
+    </ul>
+    <span>Intruder</span>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugit deleniti, laboriosam provident cum recusandae rem nobis repudiandae alias at officia eius! Odit ducimus accusamus excepturi enim expedita eaque quis.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugit deleniti, laboriosam provident cum recusandae rem nobis repudiandae alias at officia eius! Odit ducimus accusamus excepturi enim expedita eaque quis.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugit deleniti, laboriosam provident cum recusandae rem nobis repudiandae alias at officia eius! Odit ducimus accusamus excepturi enim expedita eaque quis.
+    </p>
+</body>
+</html>

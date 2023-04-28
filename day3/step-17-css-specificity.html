@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html body p#uniquebox.classbox[id][class][class='classbox']{
+            background-color: saddlebrown;
+            color: wheat;
+        }
+        html body p#uniquebox.classbox[id][class][class='classbox']{
+            background-color: saddlebrown;
+            color: wheat;
+        }
+        html body p#uniquebox.classbox[id][class]{
+            background-color: red;
+            color: wheat;
+        }
+        html body p#uniquebox.classbox[id]{
+            background-color: purple;
+            color: wheat;
+        }
+        html body p#uniquebox.classbox{
+            background-color: teal;
+            color: wheat;
+        }
+        body p#uniquebox.classbox{
+            background-color: tomato;
+            color: wheat;
+        }
+        p#uniquebox.classbox{
+            background-color: slateblue;
+            color: thistle;
+        }
+        p#uniquebox{
+            background-color: orchid;
+            color: saddlebrown;
+        }
+        /* id's specificity value 100 */
+        #uniquebox{
+            background-color: lawngreen;
+            color: midnightblue;
+        }
+        /* class specificity value 10 */
+        .classbox{
+            background-color: firebrick;
+            color: greenyellow;
+        }
+        /*element specificity value 1 */
+        p{
+            background-color: indigo ;
+            color: khaki;
+        }
+    </style>
+</head>
+<body>
+    <!-- specificity value 1000 -->
+    <p class="classbox" id="uniquebox" >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, neque. Ullam modi necessitatibus nobis dolorem animi adipisci expedita beatae sint ex commodi! Aspernatur ad possimus nisi fugiat praesentium blanditiis voluptate.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, neque. Ullam modi necessitatibus nobis dolorem animi adipisci expedita beatae sint ex commodi! Aspernatur ad possimus nisi fugiat praesentium blanditiis voluptate.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, neque. Ullam modi necessitatibus nobis dolorem animi adipisci expedita beatae sint ex commodi! Aspernatur ad possimus nisi fugiat praesentium blanditiis voluptate.
+    </p>
+</body>
+</html>

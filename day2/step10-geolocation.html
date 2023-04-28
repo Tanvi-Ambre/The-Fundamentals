@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            if(navigator.geolocation){
+            // alert("we can track you ");
+            navigator.geolocation.getCurrentPosition(successFun, errorFun, { timeout : 5000 });
+            }else{
+                alert("do update your browser");
+            }
+        }
+        function successFun(position){
+            console.log(position.coords);
+            document.getElementById("lat").innerHTML = position.coords.latitude || 'waiting';
+            document.getElementById("lon").innerHTML = position.coords.longitude || 'waiting';
+            document.getElementById("acc").innerHTML = position.coords.accuracy || 'waiting';
+        }
+        function errorFun(error){
+            // console.log(error);
+            document.getElementById("log").innerHTML = error.message;
+        }
+    </script>
+</head>
+<body onload="init()">
+    <ul>
+        <li>Longitude : <span id="lon"></span></li>
+        <li>Latitude : <span id="lat"></span></li>
+        <li>Accuracy : <span id="acc"></span> meters</li>
+    </ul>
+    <div id="log"></div>
+</body>
+</html>
