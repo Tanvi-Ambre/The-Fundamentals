@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--style media="print">
+        @import url(styles/print.css);
+    </style>
+    <style media="screen">
+        @import url(styles/screen.css);
+    </style-->
+
+    <link rel="stylesheet" href="styles/print.css" media="print">
+    <link rel="stylesheet" href="styles/screen.css">
+    <link rel="stylesheet" href="styles/style1200.css" media="screen and (max-width : 1200px)">
+    <link rel="stylesheet" href="styles/landscape.css" media="screen and (orientation : landscape)">
+    <link rel="stylesheet" href="styles/portrait.css" media="screen and (orientation : portrait)">
+    <script>
+        window.addEventListener("resize", function(){
+            document.getElementsByTagName("h1")[0].innerHTML = window.innerWidth+" px"
+        })
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <hr>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+    <div class="box box6"></div>
+    <div class="box box7"></div>
+    <div class="box box8"></div>
+    <div class="box box9"></div>
+    <div class="box box10"></div>
+</body>
+</html>

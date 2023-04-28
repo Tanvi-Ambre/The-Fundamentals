@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        /*
+        @keyframes ibmframes{
+            from{
+                background-color: tomato;
+                transform: translate(0px, 0px) rotate(0deg);
+                box-shadow: 0px 0px 0px transparent;
+            }
+            to{
+                background-color: palegreen;
+                transform: translate(1000px, 0px) rotate(360deg);
+                box-shadow: 10px 10px 20px black;
+            }
+        }
+        */
+        @keyframes ibmframes{
+            0%{
+                background-color: tomato;
+                transform: translate(0px, 0px) rotate(0deg);
+            }
+            25%{
+                background-color: palegreen;
+                transform: translate(250px, 0px) rotate(90deg);
+            }            
+            50%{
+                background-color: violet;
+                transform: translate(500px, 0px) rotate(180deg);
+            }            
+            75%{
+                background-color: yellow;
+                transform: translate(750px, 0px) rotate(270deg);
+            }            
+            100%{
+                background-color: tomato;
+                transform: translate(1000px, 0px) rotate(360deg);
+            }            
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+        }
+        .box{
+            animation-name : ibmframes;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

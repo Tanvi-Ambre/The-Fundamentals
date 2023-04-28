@@ -1,0 +1,11 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    float: left;
+    margin: 10px;
+}
+
+.box10{
+    background-color: goldenrod;
+}

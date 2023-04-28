@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </style>
+    <script>
+        let arr = [];
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByTagName("button")[0].addEventListener("click", function(){
+                arr.push(document.getElementById("ti").value);
+                createList();
+                document.getElementById("ti").value = '';
+                document.getElementById("ti").focus();
+            });
+        });
+        function createList(){
+            document.getElementById("list").innerHTML = "";
+            for(let i = 0; i< arr.length; i++){
+                document.getElementById("list").innerHTML += "<li> <input onclick='handlechecked(this)' type='checkbox'/>"+arr[i]+"<input onclick='handledelete(this)' type='checkbox'/>  </li>";
+            }
+        }
+        function handlechecked(elm){
+            if(elm.checked){
+                elm.parentElement.style = "text-decoration: line-through"
+            }else{
+                elm.parentElement.style = "text-decoration: none"
+            }
+        }
+        function handledelete(elm){
+            document.getElementById("list").removeChild(elm.parentElement)
+        }
+    </script>
+</head>
+<body>
+    <input id="ti" type="text">
+    <button>Add Event</button>
+    <ol id="list"></ol>
+</body>
+</html>
