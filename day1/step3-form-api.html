@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function logValue(source, target){
+            document.querySelector(target).textContent = source.value;
+        }
+        function outputValue(source, target){
+            document.querySelector(target).value = source.value;
+        }
+    </script>
+    <style>
+        .ipdttime, .ipweek{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Type of Input</th>
+                <th>How its rendered in the browser</th>
+                <th>Value is</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Text</td>
+                <td> <input onchange="logValue(this,'.iptext')" type="text"> </td>
+                <td>
+                    <span class="iptext"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Search</td>
+                <td> <input onchange="logValue(this,'.ipsearch')" type="search"> </td>
+                <td>
+                    <span class="ipsearch"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td> <input onchange="logValue(this,'#ipcol')" type="color"> </td>
+                <td>
+                    <span id="ipcol"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Range</td>
+                <td> <input onchange="logValue(this,'.iprange')" type="range"> </td>
+                <td>
+                    <span class="iprange"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td> <input onchange="logValue(this,'.iptime')" type="time"> </td>
+                <td>
+                    <span class="iptime"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td> <input onchange="logValue(this,'.ipdate')" type="date"> </td>
+                <td>
+                    <span class="ipdate"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Date & Time</td>
+                <td> <input onchange="logValue(this,'.ipdttime')" type="datetime"> </td>
+                <td style="width: 200px;">
+                    <div class="ipdttime"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Date & Time Local</td>
+                <td> <input onchange="logValue(this,'.ipdttimel')" type="datetime-local"> </td>
+                <td class="ipdttimel"></td>
+            </tr>
+            <tr>
+                <td>Week</td>
+                <td> <input onchange="logValue(this,'.ipweek')" type="week"> </td>
+                <td>
+                    <span class="ipweek"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Month</td>
+                <td> <input onchange="logValue(this,'.ipmonth')" type="month"> </td>
+                <td>
+                    <span class="ipmonth"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Number</td>
+                <td> <input onchange="logValue(this,'.ipnum')" type="number"> </td>
+                <td>
+                    <span class="ipnum"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>eMail</td>
+                <td> <input onchange="logValue(this,'.ipmail')" type="email"> </td>
+                <td>
+                    <span class="ipmail"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Telephone</td>
+                <td> <input onchange="logValue(this,'.iptel')" type="tel"> </td>
+                <td>
+                    <span class="iptel"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td> <input onchange="logValue(this,'.ipurl')" type="URL"> </td>
+                <td>
+                    <span class="ipurl"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">Outputs</td>
+            </tr>
+            <tr>
+                <td>Progress</td>
+                <td> 
+                    <input min="0" max="1" step="0.1" onchange="outputValue(this,'.outprog')" type="range">
+                </td>
+                <td>
+                    <progress class="outprog"></progress>
+                </td>
+            </tr>
+            <tr>
+                <td>Meter</td>
+                <td> 
+                    <meter low="0.3" high="0.7" optimum="0.5" value="0.5" class="outmeter"></meter>
+                    <br>
+                    <meter low="0.4" high="0.7" optimum="0.8" value="0.3" class="outmeter"></meter>
+                    <br>
+                    <meter low="0.4" high="0.7" optimum="0.8" value="0.5" class="outmeter"></meter>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad pariatur, maiores praesentium voluptatum libero in veniam veritatis rem consequatur molestias accusamus assumenda laudantium, minus quisquam velit ratione dignissimos quis?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad pariatur, maiores praesentium voluptatum libero in veniam veritatis rem consequatur molestias accusamus assumenda laudantium, minus quisquam velit ratione dignissimos quis?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad pariatur, maiores praesentium voluptatum libero in veniam veritatis rem consequatur molestias accusamus assumenda laudantium, minus quisquam velit ratione dignissimos quis?
+    </p>
+</body>
+</html>

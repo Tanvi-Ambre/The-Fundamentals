@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="500" height="500">Please update your browser</canvas>
+    <script>
+        var ctx = document.getElementById("can").getContext("2d");
+            ctx.font = "normal 40px Impact";
+            // ctx.rotate
+            // ctx.scale
+            // ctx.translate
+
+            // ctx.rotate((Math.PI/180)*90);// Radiance
+            // ctx.scale(2,0.5); // multipliers
+            // ctx.translate(20, 50); // new x and y values in pixels for offsets
+            // ctx.fillText("IBM India",0,0);
+
+            // ctx.moveTo(10,10);
+            // ctx.lineTo(100,100);
+            // ctx.lineTo(300,100);
+            // ctx.lineTo(300,300);
+            // ctx.lineTo(100,300);
+            // ctx.lineTo(100,100);
+            // ctx.strokeRect(10,10, 200, 200);
+            // ctx.strokeRect(50,50, 200, 200);
+            // ctx.stroke();
+            
+            // ctx.moveTo(100,100);
+            // ctx.lineTo(300,100);
+            // ctx.lineTo(300,300);
+            // ctx.lineTo(100,300);
+            // ctx.lineTo(100,100);
+            // ctx.fillStyle = "orange";
+            // ctx.lineWidth = 5;
+            // ctx.lineStyle = "2px solid black";
+            // ctx.closePath();
+            // ctx.fill();
+            // ctx.stroke();
+
+            // ctx.fillStyle = "rgba(255,0,0,0.5)";
+            // ctx.fillRect(10,10,100,100);
+
+            // ctx.fillStyle = "rgba(255,0,0,0.4)";
+            // ctx.fillRect(50,50,100,100);
+
+            setInterval(function(){
+            //    ctx.clearRect(0,0,500,500);
+            //     ctx.fillRect(boxX,0,100,100);
+            //    if(boxX > 500){
+            //     boxX = -100;
+            //    }
+            //    boxX++;
+                var boxX = Math.round( Math.random() * 500 );
+                var boxY = Math.round( Math.random() * 500 );
+                var boxW = Math.round( Math.random() * 50 );
+                // var boxH = Math.round( Math.random() * 100 );
+                var r = Math.round(Math.random() * 255 );
+                var g = Math.round(Math.random() * 255 );
+                var b = Math.round(Math.random() * 255 );
+                var a = Math.random(); 
+                // ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
+                ctx.fillStyle = "rgba("+r+","+g+","+b+","+a+")";
+                ctx.fillRect(boxX,boxY,boxW,boxW);
+            },1);
+
+    </script>
+</body>
+</html>

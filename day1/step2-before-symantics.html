@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--[if lt IE 9]>
+        <script>
+            document.createElement("header");
+            document.createElement("hgroup");
+            document.createElement("section");
+            document.createElement("article");
+            document.createElement("main");
+            document.createElement("footer");
+            document.createElement("figure");
+            document.createElement("figcaption");
+            document.createElement("time");
+            document.createElement("mark");
+        </script>
+        <style>
+            header, nav, main, section, article, footer, figure, figcaption{
+            display: block;
+            }
+            time, mark{
+            display: inline;
+            }
+            mark{
+                background-color: blueviolet;
+                color: black;
+            }
+        </style>
+    <![endif]-->
+    <style>
+        header, nav, main, section, article, footer{
+            border: 1px solid grey;
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>Welcome to IBM India</h1>
+            <h2> Front end training / Angular </h2>
+        </hgroup>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul> 
+    </nav>
+    <main>
+        <section>
+            <header>
+                <h1>About IBM - India</h1>
+            </header>
+            <article>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa corrupti impedit eligendi explicabo nobis voluptatem odit magni sapiente aliquam laborum, eius adipisci maxime tenetur repellendus, ullam consequuntur quidem natus corporis.
+            </article>
+            <article>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa corrupti impedit eligendi explicabo nobis voluptatem odit magni sapiente aliquam laborum, eius adipisci maxime tenetur repellendus, ullam consequuntur quidem natus corporis.
+            </article>
+            <article>
+                Lorem ipsum, dolor sit amet <mark>consectetur adipisicing</mark> elit. Ipsa corrupti impedit eligendi explicabo nobis voluptatem odit magni sapiente aliquam laborum, eius adipisci maxime tenetur repellendus, ullam consequuntur quidem natus corporis.
+            </article>
+        </section>
+        <section>
+            <figure>
+                <figcaption>Theser are my Favorite Avenger Heroes</figcaption>
+                <img width="200" src="images/antman.jpg" alt="Antman">
+                <img width="200" src="images/batman.jpg" alt="Batman">
+                <img width="200" src="images/blackpanther.jpg" alt="Blackpanther">
+                <img width="200" src="images/blackwidow.jpg" alt="Blackwidow">
+            </figure>
+            <time>12:17 PM</time>
+        </section>
+    </main>
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+</body>
+</html>
