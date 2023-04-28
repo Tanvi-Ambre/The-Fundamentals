@@ -1,0 +1,169 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template : `
+  <h1>Directives 101</h1>
+  Show terms and conditions : 
+  <input type="checkbox" (change)="agree = !agree">
+  <div [hidden]="!agree">
+    <h2>Terms & Conditions</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+    </p>
+  </div>
+  <hr>
+  <div *ngIf="agree">
+    <h2>Terms & Conditions</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+    </p>
+  </div>
+  <hr>
+  <input min="4" max="10" step="1" #rng type="range" (input)="power = rng.value">Power is {{ power }}
+  <br>
+  <input min="4" max="10" step="1" type="range" (input)="power = $event.target.value">Power is {{ power }}
+  <div [ngSwitch]="power"> 
+    <h1 *ngSwitchCase="6">Needs Rest</h1>
+    <h1 *ngSwitchCase="7">Strong</h1>
+    <h1 *ngSwitchCase="8">Stronger</h1>
+    <h1 *ngSwitchCase="9">Strongest</h1> 
+    <h1 *ngSwitchCase="10">Unbeatable</h1>
+    <h1 *ngSwitchDefault>Recovering</h1>
+  </div>
+  <div [ngSwitch]="power"> 
+    <h1 *ngSwitchCase="6">*</h1>
+    <h1 *ngSwitchCase="7">**</h1>
+    <h1 *ngSwitchCase="8">***</h1>
+    <h1 *ngSwitchCase="9">****</h1> 
+    <h1 *ngSwitchCase="10">*****</h1>
+    <h1 *ngSwitchDefault></h1>
+  </div>
+  <br>
+  <br>
+  <br>
+  <ul>
+    <li>{{ justiceleague[0] }}</li>
+    <li>{{ justiceleague[1] }}</li>
+    <li>{{ justiceleague[2] }}</li>
+  </ul>
+  <ul>
+    <li *ngFor="let hero of justiceleague">{{ hero }}</li>
+  </ul>
+  <br>
+  <br>
+  <h2 ngNonBindable> {{ Hello Everyone }} </h2>
+  <input type="checkbox" (change)="agree = !agree">
+  <div class="box shadowbox" [class.bluebox]="agree">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aut cumque alias repellendus ab itaque soluta, vel quibusdam minima nostrum quae enim eaque ex ipsa placeat recusandae, aliquid molestiae rem?
+  </div>
+  <div class="box" [ngClass]="['bluebox','shadowbox']">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aut cumque alias repellendus ab itaque soluta, vel quibusdam minima nostrum quae enim eaque ex ipsa placeat recusandae, aliquid molestiae rem?
+  </div>
+  <div class="box" [ngClass]="{ bluebox : power > 6 , shadowbox : agree}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aut cumque alias repellendus ab itaque soluta, vel quibusdam minima nostrum quae enim eaque ex ipsa placeat recusandae, aliquid molestiae rem?
+  </div>
+  <br>
+  <hr>
+  <div class="box" [style]="styleprop">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aut cumque alias repellendus ab itaque soluta, vel quibusdam minima nostrum quae enim eaque ex ipsa placeat recusandae, aliquid molestiae rem?
+  </div>
+  <div class="box" [style.backgroundColor]="bgcol">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aut cumque alias repellendus ab itaque soluta, vel quibusdam minima nostrum quae enim eaque ex ipsa placeat recusandae, aliquid molestiae rem?
+  </div>
+  <div class="box" [ngStyle]="{ color : '#b78ae6', backgroundColor : 'black' }">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aut cumque alias repellendus ab itaque soluta, vel quibusdam minima nostrum quae enim eaque ex ipsa placeat recusandae, aliquid molestiae rem?
+  </div>
+  <hr>
+  
+  <ng-container *ngIf="agree ; else areyousure">
+   <h2>Terms & Conditions</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+    </p>
+  </ng-container>
+
+  <ng-template #areyousure >
+    Are you sure you dont want to read the terms and conditions
+  </ng-template>
+
+  Show terms and conditions : <input type="checkbox" (change)="agree = !agree">
+  <hr>
+
+  <ng-template [ngIf]="agree">
+  <h2>condition based on ng-template</h2>
+   <p>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero blanditiis, nulla, expedita quae sunt veritatis quas iste rem placeat tempora atque voluptatibus provident nesciunt corrupti molestiae. Architecto, excepturi nam atque!
+   </p>
+ </ng-template>
+  <hr>
+  <ol>
+    <li *ngFor="let hero of justiceleague">{{ hero }}</li>
+  </ol>
+  <div>
+    <p *ngFor="let hero of justiceleague; index as idx; odd as od; even as ev; first as fst; last as lst"> 
+    
+    {{( idx+1)+" | "+hero }}  
+    <ng-template [ngIf]="fst"> First Hero </ng-template>
+    <ng-template [ngIf]="lst"> Last Hero </ng-template>
+    <ng-template [ngIf]="!lst && !fst"> Inbetween Hero </ng-template>
+    <ng-template [ngIf]="!od"> Odd Hero </ng-template>
+    <ng-template [ngIf]="!ev"> Even Hero </ng-template>
+    </p>
+  </div>
+  <br>
+  <br>
+  <br>
+  <input [value]="score" min="0" max="10" step="1" type="range" (input)="score = $event.target.value">Score is {{ score }}
+  <input [(ngModel)]="score" min="0" max="10" step="1" type="range" >
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  `,
+  styles : [`
+    .box{
+      width : 400px;
+      height : 100px;
+      padding : 10px;
+      margin : 30px;
+      border : 1px solid grey;
+    }
+    .bluebox{
+      background-color : lightblue;
+    }
+    .shadowbox{
+      box-shadow : 0px 0px 20px black;
+    }
+  `]
+})
+export class AppComponent {
+  title = 'step2-directives';
+  agree = false;
+  corner = "bluebox";
+  bgcol = 'orange';
+  styleprop = "background-color : purple; color : white";
+  power = 6;
+  score = 2;
+  justiceleague = ['Batman', 'Superman', 'Aquaman', 'Flash', 'Wonder Women', 'Cyborg' ]
+}
